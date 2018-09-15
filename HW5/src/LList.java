@@ -281,8 +281,25 @@ class LList<T> implements ListInterface<T> {
      */
     public void reverse() {
 
-        // CODE TO BE COMPLETED        
-
+        // CODE TO BE COMPLETED
+    	if(getLength()>=2) {
+        	Node node1,node2,node3;
+        	node1=firstNode;
+        	node2=node1.getNextNode();
+        	node3=node2.getNextNode();
+        	node1.setNextNode(null);
+        	while(node3!=null)
+        	{
+        		node2.setNextNode(node1);
+        		node1=node2;
+        		node2=node3;
+        		node3=node3.getNextNode();
+        	}
+        	node2.setNextNode(node1);
+        	firstNode=node2;
+    	}
+        	
+        
     }
 
     /** Cycle the first item to the end of the list.
