@@ -300,7 +300,15 @@ class AList<T> implements ListInterface<T> {
     public void cycle()
     {
         // COMPLETE THIS METHOD  
-    	
+    	int beg,end,back;
+        T temp=list[1];
+		back=1;
+		while(back<numberOfEntries)
+		{
+			list[back]=list[back+1];
+			back++;
+		}
+			list[numberOfEntries]=temp;
     }
 
 }
