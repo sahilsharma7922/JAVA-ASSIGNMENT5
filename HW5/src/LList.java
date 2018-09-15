@@ -306,7 +306,15 @@ class LList<T> implements ListInterface<T> {
      */
     public void cycle() {
 
-        // CODE TO BE COMPLETED        
+        // CODE TO BE COMPLETED  
+    Node node1,node2,lastnode;
+    node1=firstNode;
+    node2=node1.getNextNode();
+    lastnode=getNodeAt(numberOfEntries);
+    lastnode.setNextNode(node1);
+    firstNode=node2;
+    node1.setNextNode(null);
+    
 
     }
 }
